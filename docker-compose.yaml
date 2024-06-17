@@ -1,0 +1,10 @@
+services:
+  ? adp-manual-test
+  : build:
+      context: .
+      target: production
+    image: adp-manual-test
+    container_name: adp-manual-test
+    environment:
+      APPINSIGHTS_CONNECTIONSTRING: ${APPINSIGHTS_CONNECTIONSTRING}
+      APPINSIGHTS_CLOUDROLE: adp-manual-test-local
